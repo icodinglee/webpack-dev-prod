@@ -5,9 +5,19 @@ var webpack = require('webpack');
 
 module.exports =  webpackMerge(baseConfig, {
     devServer: {
+        disableHostCheck: true,
         host: 'localhost',
         port: 3000,
-        contentBase: path.join(__dirname, 'build')
+        historyApiFallback: true,
+        noInfo: false,
+        contentBase: path.join(__dirname, 'build'), 
+        proxy: {     // 开发中使用代理解决跨域 
+            // "/supervice": { 
+            //   target: 'http://192.168.xx.xx:8091',
+            //   secure: false,
+            //   changeOrigin: true
+            // }
+        }
     },
     plugins: [
         // 热模块替换
