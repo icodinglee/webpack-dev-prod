@@ -1,0 +1,12 @@
+{
+    "presets": [ "react",
+      [ "env",
+        {
+          "targets": {
+            "browsers": ["IE >= 9"]
+          }
+        }
+      ],
+      "stage-0"
+    ]
+}

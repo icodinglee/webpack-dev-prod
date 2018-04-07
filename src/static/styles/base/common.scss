@@ -1,0 +1,55 @@
+// 文字溢出省略号
+.text-overflow {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+* {
+  box-sizing: border-box;
+}
+html {
+  font-size: 20px;
+}
+.clearfix:after {
+  content: '.';
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+.rodal-dialog {
+  padding: 0 !important;
+}
+
+.wrapper{
+    width: 1240px;
+    margin: 0 auto;
+}
+.float_l{
+    float: left;
+}
+.float_r{
+    float: right;
+}
+.font_14{
+    font-size: 14px;
+}
+.font_16{
+    font-size: 16px;
+}
+.font_18{
+    font-size: 18px;
+}
+.color_white{
+    color: #fff;
+}
+.title{
+    font-size:26px;
+    font-family:SourceHanSansCN-Bold;
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: "teko-light";
+    src: url('../fonts/teko-light.otf');
+}
