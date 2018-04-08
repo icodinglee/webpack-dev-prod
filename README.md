@@ -5,11 +5,11 @@
 - src
     - components
     - containers
-    - plugins  // 插件 打包后直接copy  在index.html 中使用  src="/static/plugins/xx"  即可使用
+    - plugins   插件 —— 打包后直接被copy进dist文件夹, 在index.html 中使用  src="/static/plugins/xx"  即可使用
     - static    
-        - images // 静态图片
-        - fonts  // 字体
-        - styles // 公用样式
+        - images  静态图片文件
+        - fonts   静态字体文件
+        - styles  公用样式
     - index.html
     - index.jsx
 - .babelrc

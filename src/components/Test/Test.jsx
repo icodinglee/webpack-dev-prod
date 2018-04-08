@@ -3,13 +3,15 @@ import styles from './Test.scss';
 // import bg from '../../static/images/banner.png';
 
 export default class Test extends React.Component{
+    componentWillMount(){
+        console.log('jquery', $);
+        console.log(__DEV__);
+    }
     render(){
         return (
             <div className={styles.test}>
-                <h2>App</h2>
-                <div className="color-red">
-                    <p>red</p>
-                    {/* <img src={bg} alt=""/> */}
+                <div className="color-white">
+                    <p>欢迎到来</p>
                 </div>
             </div>
         )

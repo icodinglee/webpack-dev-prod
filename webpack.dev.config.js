@@ -7,7 +7,7 @@ module.exports =  webpackMerge(baseConfig, {
     devServer: {
         disableHostCheck: true,
         host: 'localhost',
-        port: 3000,
+        port: 8000,
         historyApiFallback: true,
         noInfo: false,
         contentBase: path.join(__dirname, 'build'), 
