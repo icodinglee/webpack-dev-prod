@@ -1,0 +1,16 @@
+
+.login{
+    .loginHeader{
+        background:rgb(0, 188, 212);
+        h3{
+            text-align: center;
+            line-height: 100px;
+            color: #fff
+        }
+    }
+    span{
+        &:hover{
+            color: rgb(255, 64, 129)
+        }
+    }
+}

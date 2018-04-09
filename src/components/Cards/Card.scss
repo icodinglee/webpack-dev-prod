@@ -1,0 +1,11 @@
+.gray{
+    &:hover{
+        color: #ccc
+    }
+}
+.color{
+    margin-left: 10px;
+    &:hover{
+        color: rgb(255, 64, 129)
+    }
+}

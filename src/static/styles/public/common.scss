@@ -1,5 +1,17 @@
-.color-white{
-    color: #Fff;
-    line-height: 200px;
-    transform: translateX(48%)
+.content{
+    width: 300px;
+    line-height: 400px;
+    margin: 50px auto;
+    text-align: center;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 6px, rgba(0, 0, 0, 0.12) 0px 1px 4px;
+}
+.single-text{
+    text-align: center;
+    line-height: 100px;
+}
+.gray{
+    color: #ccc
+}
+.colorful{
+    color: rgb(255, 64, 129)
 }
