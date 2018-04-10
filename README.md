@@ -2,8 +2,8 @@
 
 ##### 项目分支
 - master 主分支. 关键词 sass es6 ie9+
-- mobx   使用mobx进行数据管理.
-- redux 使用redux + redux-thunk进行数据管理.
+- mobx   添加mobx进行数据管理.
+- redux 添加redux + redux-thunk进行数据管理.
 
 ##### 项目目录
 - node_modules
