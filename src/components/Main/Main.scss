@@ -1,0 +1,15 @@
+.main{
+    .buttonContainer{
+        text-align: center;
+        span{
+            display: inline-block;
+            cursor: pointer;
+            font-size: 20px;
+            margin-left: 10px;
+            width: 60px;
+            line-height: 35px;
+            color: #fff;
+            background: #00bcd4
+        }
+    }
+}
