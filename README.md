@@ -10,6 +10,7 @@
 - src
     - components
     - containers
+    - util  项目中常用的一些方法
     - plugins   插件 —— 打包后直接被copy进dist文件夹, 在index.html 中使用  src="/static/plugins/xx"  即可使用
     - static    
         - images  静态图片文件
