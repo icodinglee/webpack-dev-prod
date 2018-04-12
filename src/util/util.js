@@ -130,49 +130,48 @@ export function fieldAnomaly(value) {
 }
 
 /**
- * 
- * @desc 获取浏览器类型和版本
- * @return {String} 
+ * @desc 函数柯里化
  */
-export function getExplore() {
-    var sys = {},
-        ua = navigator.userAgent.toLowerCase(),
-        s;
-    (s = ua.match(/rv:([\d.]+)\) like gecko/)) ? sys.ie = s[1]:
-        (s = ua.match(/msie ([\d\.]+)/)) ? sys.ie = s[1] :
-        (s = ua.match(/edge\/([\d\.]+)/)) ? sys.edge = s[1] :
-        (s = ua.match(/firefox\/([\d\.]+)/)) ? sys.firefox = s[1] :
-        (s = ua.match(/(?:opera|opr).([\d\.]+)/)) ? sys.opera = s[1] :
-        (s = ua.match(/chrome\/([\d\.]+)/)) ? sys.chrome = s[1] :
-        (s = ua.match(/version\/([\d\.]+).*safari/)) ? sys.safari = s[1] : 0;
-    // 根据关系进行判断
-    if (sys.ie) return ('IE: ' + sys.ie)
-    if (sys.edge) return ('EDGE: ' + sys.edge)
-    if (sys.firefox) return ('Firefox: ' + sys.firefox)
-    if (sys.chrome) return ('Chrome: ' + sys.chrome)
-    if (sys.opera) return ('Opera: ' + sys.opera)
-    if (sys.safari) return ('Safari: ' + sys.safari)
-    return 'Unkonwn'
-}
+export function currying(fn) {
+    var args = [];  //传入的数据都被缓存在这里，在符合条件时一并传给计算函数
+
+    return  function () {
+      if (arguments.length == 0) {
+        return fn.apply(this, args )
+      } else {
+        [].push.apply(args, arguments)
+        return arguments.callee  // （这句可不要）返回自身，在后面可以这样用 cost(100)(200)
+      }
+    }
+  }
 
 /**
- * 
- * @desc 获取操作系统类型
- * @return {String} 
+ * @desc 函数节流
  */
-export function getOS() {
-    var userAgent = 'navigator' in window && 'userAgent' in navigator && navigator.userAgent.toLowerCase() || '';
-    var vendor = 'navigator' in window && 'vendor' in navigator && navigator.vendor.toLowerCase() || '';
-    var appVersion = 'navigator' in window && 'appVersion' in navigator && navigator.appVersion.toLowerCase() || '';
+export function throttle(fn, interval) {
+    var  timer, firstTime = true;
 
-    if (/iphone/i.test(userAgent) || /ipad/i.test(userAgent) || /ipod/i.test(userAgent)) return 'ios'
-    if (/android/i.test(userAgent)) return 'android'
-    if (/win/i.test(appVersion) && /phone/i.test(userAgent)) return 'windowsPhone'
-    if (/mac/i.test(appVersion)) return 'MacOSX'
-    if (/win/i.test(appVersion)) return 'windows'
-    if (/linux/i.test(appVersion)) return 'linux'
+    return function () {
+      var args = arguments;
+      var _me = this;
+
+       if ( firstTime ) {
+         fn.apply(_me, args)
+         return firstTime = false;
+       }
+
+       if ( timer ) {
+         return false
+       }
+
+       timer = setTimeout(function () {
+         clearTimeout(timer);
+         timer=null;
+         fn.apply(_me, args)
+       }, interval || 500)
+    }
+
 }
-
 
 /**
  * @desc 判断对象是否相等

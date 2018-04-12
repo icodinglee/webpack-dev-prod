@@ -69,3 +69,18 @@ export function timestampToTime(timestamp) {
     var D = date.getDate() + ' ';
     return Y + M + D;
   }
+
+  /**
+ * 
+ * @desc 是否为闰年
+ * @param {Number} year
+ * @returns {Boolean}
+ */
+
+export function isLeapYear(year) {
+    if (0 === year % 4 && (year % 100 !== 0 || year % 400 === 0)) {
+      return true
+    }
+    return false;
+}
+  
