@@ -14,7 +14,7 @@ import ColorfulCard from '../components/ColorfulCard/ColorfulCard';
 
 const routes = ()=>(
     <Router>
-        <switch>
+        <Switch>
             <Route path="/" exact={true} render={() => <Redirect to="/login" />} />
             <Route path="/login" component={Login} />
             <Route
@@ -33,7 +33,7 @@ const routes = ()=>(
                     </Home>
                 )}
             />
-        </switch>
+        </Switch>
     </Router>
 )
 
