@@ -45,7 +45,6 @@ module.exports = {
                 use: extractStyle.extract({
                     use: [ 
                             { loader: "css-loader?modules&localIdentName=[name]_[local]_[hash:base64:5]" },  //BEM
-                            { loader: 'sass-loader'},
                             {
                                 loader: 'postcss-loader', 
                                 options: {
@@ -54,7 +53,8 @@ module.exports = {
                                         path: 'postcss.config.js'  // 这个得在项目根目录创建此文件
                                     }
                                 }
-                            }
+                            },
+                            { loader: 'sass-loader'}
                     ],
                     fallback: "style-loader" // 开发环境使用
                 })
@@ -65,7 +65,6 @@ module.exports = {
                 use: extractVendor.extract({
                     use: [ 
                         { loader: "css-loader" },  // 不使用BEM
-                        { loader: 'sass-loader'},
                         {
                             loader: 'postcss-loader', 
                             options: {
@@ -74,7 +73,8 @@ module.exports = {
                                     path: 'postcss.config.js'  // 这个得在项目根目录创建此文件
                                 }
                             }
-                        }
+                        },
+                        { loader: 'sass-loader'}
                     ]
                 })
             // 解析字体文件            

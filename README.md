@@ -1,7 +1,7 @@
 ## react + webpack 实际项目开发脚手架
 
 ##### 项目分支
-- master 主分支. 关键词 sass es6 ie9+
+- master 主分支. 关键词 react-router-v4 sass es6 ie9+
 - mobx   添加mobx进行数据管理.
 - redux 添加redux + redux-thunk进行数据管理.
 
